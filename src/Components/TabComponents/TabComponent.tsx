@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import ImageSlider from "./Components/carousel/Carousel";
-import HackerNews from "./Components/HackerNewsTable/HackerNewsTable";
-import SubmitForms from "./Components/SubmitForm/SubmitForm";
+import ImageSlider from "../carousel/Carousel";
+import HackerNews from "../HackerNewsTable/HackerNewsTable";
+import SubmitForms from "../SubmitForm/SubmitForm";
+
+import { Container, Tabs, TabButton, Content, Title } from "./Tabs.styled";
 
 interface MenuItem {
   title: string;
@@ -13,18 +15,18 @@ const Tab: MenuItem[] = [
   {
     id: 1,
     title: "Tab1",
-    component: ImageSlider
+    component: ImageSlider,
   },
   {
     id: 2,
     title: "Tab2",
-    component: HackerNews
+    component: HackerNews,
   },
   {
     id: 3,
     title: "Tab3",
-    component: SubmitForms
-  }
+    component: SubmitForms,
+  },
 ];
 
 const TabComponent = () => {
@@ -35,32 +37,32 @@ const TabComponent = () => {
   };
 
   return (
-    <div className="container">
-      <div className="tabs">
+    <Container>
+      <Tabs>
         {Tab.map((tab) => (
-          <button
+          <TabButton
             key={tab.id}
             id={tab.id.toString()}
             disabled={currentTab === tab.id}
             onClick={handleTabClick}
           >
             {tab.title}
-          </button>
+          </TabButton>
         ))}
-      </div>
-      <div className="content">
+      </Tabs>
+      <Content>
         {Tab.map((tab) => (
           <div key={tab.id}>
             {currentTab === tab.id && (
               <div>
-                <p className="title">{tab.title}</p>
+                <Title>{tab.title}</Title>
                 <tab.component />
               </div>
             )}
           </div>
         ))}
-      </div>
-    </div>
+      </Content>
+    </Container>
   );
 };
 

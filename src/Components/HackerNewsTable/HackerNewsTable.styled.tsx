@@ -22,10 +22,7 @@ const StyledTable = styled.table`
   td{
     border: 2px solid #222222;
   }
-  td:hover {
-    background-color: #000000;
-    color : #2efe32
-  }
+  
   
   th {
     background-color: #ffffff;

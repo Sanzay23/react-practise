@@ -1,17 +1,11 @@
 import styled from "styled-components";
 
-interface MenuItem{
-    title: string,
-    path:string,
-  }
-  interface TabButtons {
-    isClicked: boolean;
-    items: MenuItem[];
-  }
+
+
 const AppContainer = styled.div`
   height: 100vh;
   width: 100vw;
-  background-color: red;
+  background-color: black;
   display: flex;
   justify-content: center;
 `;
@@ -23,6 +17,6 @@ const StyledTabs = styled.div `
 `;
 
 
-export  default {
+export   {
 AppContainer , StyledTabs ,
-}
+};
